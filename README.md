@@ -45,4 +45,23 @@ Indirect branches are costly
     * Works for conditional branches by predicting the branch
   * Indirect branch: target unknown, need to wait until address fetch completes
 
-### Issues  
+### Issues with object oriented
+Memory fragmentation
+  * objects are allocated independently
+  * All over memory
+  * If contiguos in memory -> getting to the next item is just a index increment
+
+So in some cases we can improve the performance drastically by removing object style and directly using structures like arrays.
+
+### Moving from Java to C
+Whenever we move from a higher level language to a lower one, there will be some performance gains.
+lets see diff between:
+* Java
+ Memory bounds check
+ Bytecode first interpreted and then JITed(fast compilation, no time to generate the best code)
+
+* C
+ No Memory bounds check
+ Intel C Compiler compiles the program directly into x86 assembly.
+
+### Profiling with performance counters
