@@ -31,4 +31,18 @@ Copying is costly
 ### Issues with Dynamic Dispatch
 
 Method call overhead
-  * Multiple subtypes:
+  * Multiple subtypes: What method to call depends on the object
+  * Each method call needs to loop-up the object type in a dispatch table.
+  * Dynamic dispatch is an address is an address lookup + indirect branch.
+
+Indirect branches are costly
+  * Modern microphones are deeply pipelined
+    * 12 pipelines in core 2 duo, 20 in Pentium 4
+    * ie hundreds of instructions in flight
+  * Need to be able to keep fetching next instructions before executing them.
+  * Normal instructions: keep fetching the next instructions
+  * Direct branch: target address known can fetch ahead from target
+    * Works for conditional branches by predicting the branch
+  * Indirect branch: target unknown, need to wait until address fetch completes
+
+### Issues  
