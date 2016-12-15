@@ -71,4 +71,19 @@ L1 and L2 cache miss rate -> are your access using the cache well or is the cach
 Instructions Retired -> How many instructions got executed.
 
 ### General notes
-Contigous accesses are better -> data fetch as cache line, contiguos data -> single cache fetch supports 8 reads of doubles. 
+Contiguous accesses are better -> data fetch as cache line, Contiguous data -> single cache fetch supports 8 reads of doubles.
+
+check for possibilities to preprocess data to reduce the complexity.
+
+### cache hierarchy
+Store the most probable accesses in small amount of memory with fast access.
+Hardware heuristics determine what will be in each cache and when.
+
+### The temperamental cache
+If your access pattern matches heuristics of the hardware, then you program will be blazingly fast.
+
+### Changing the program
+Many ways to get to the same result
+* change the execution order
+* change the algorithm
+* change the data structures
