@@ -65,3 +65,10 @@ lets see diff between:
  Intel C Compiler compiles the program directly into x86 assembly.
 
 ### Profiling with performance counters
+Modern hardware counts "events" - lot more information than just execution time.
+CPI- Clock cycles per instruction -> measures if instructions are stalling.
+L1 and L2 cache miss rate -> are your access using the cache well or is the cache misbehaving?
+Instructions Retired -> How many instructions got executed.
+
+### General notes
+Contigous accesses are better -> data fetch as cache line, contiguos data -> single cache fetch supports 8 reads of doubles. 
