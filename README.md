@@ -94,3 +94,36 @@ Many ways to get to the same result
   (a+b)+c is not the same as a+(b+c)
 * Drop/change precision
 * Operate within acceptable error range.
+
+### Instruction level optimizations
+Modern processors have many other performance tricks
+* Instruction level parallelism
+2 integers, 2 floating point and 1 MMX/SSE
+* MMX/SSE instructions
+  can do the same operation on multiple contiguous data at the same time.
+* cache hierarchy
+* prefetching of data
+
+### Nudge the compiler
+need to nudge the compiler to generate the vector code
+* remove any perceived dependencies
+* Bound most constant variables to the constant
+
+### Tuned libraries
+BLAS Libraries
+* Hand tuned library in C/assembly to take full advantage of hardware.
+* see http://www.netlib.org/blas & http://ressim.berlios.de
+
+### Intel Math kernel library
+specially tuned library for x86
+
+### Parallel Execution
+Multicores are here
+* 2 to 6 core in a processor
+* 1 to 4 processor in a box
+* cloud machines have 2 processors with 6 cores(total 12 cores)
+
+### Use concurrency for parallel execution
+* Divide the computation into multiple independent/concurrent computations.
+* Run the computations in parallel
+* Synchronize at the end 
