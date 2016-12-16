@@ -87,3 +87,10 @@ Many ways to get to the same result
 * change the execution order
 * change the algorithm
 * change the data structures
+
+### Some changes can perturb results
+* Select a different but equivalent answer.
+* Reorder arithmetic operations
+  (a+b)+c is not the same as a+(b+c)
+* Drop/change precision
+* Operate within acceptable error range.
