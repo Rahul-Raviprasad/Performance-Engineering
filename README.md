@@ -126,4 +126,16 @@ Multicores are here
 ### Use concurrency for parallel execution
 * Divide the computation into multiple independent/concurrent computations.
 * Run the computations in parallel
-* Synchronize at the end 
+* Synchronize at the end
+
+### Issues with parallelism
+#### Amdhal's Law
+* Any computation can be analyzed in terms of a portion that must be executed sequentially, Ts and a portion that can be executed in parallel, Tp. Then for n processors:
+  * T(n) = Ts + Tp/n
+  * T(infinity) = Ts, thus maximum speedup (Ts + Tp)/Ts
+
+#### Load Balancing
+The work is distributed among processors so that all processors are kept busy all of the time.
+
+#### Granularity
+The size of the parallel regions between synchronizations or the ratio of computations(useful work) to communication(overhead).
