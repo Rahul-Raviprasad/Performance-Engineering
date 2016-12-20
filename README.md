@@ -1,6 +1,7 @@
 # Performance-Engineering
 My Collection of notes on performance
 
+Performance is like currency, that gives you the ability to buy more features tomorrow.
 
 ## Is Performance Good?
 
@@ -141,3 +142,16 @@ The work is distributed among processors so that all processors are kept busy al
 
 #### Granularity
 The size of the parallel regions between synchronizations or the ratio of computations(useful work) to communication(overhead).
+
+### Swaps
+Swap two integers x and y
+Solution 1 : t = x;
+x = y;
+y = t;
+Solution 2: Swap two integer without a temporary variable
+x = x ^ y;
+y = x ^ y;
+x = x ^ y;
+
+Why it works?
+XOR (^) is its own inverse: (x^y)^y = x
