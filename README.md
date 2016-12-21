@@ -155,3 +155,27 @@ x = x ^ y;
 
 Why it works?
 XOR (^) is its own inverse: (x^y)^y = x
+
+### Minimum  of two integers
+if(x < y) {
+  r = x;
+} else {
+  r = y;
+}
+
+solution 2: r = (x < y) ? x : y;
+
+Performance:
+A single mis predicted branch empties the processors pipeline.
+ - ~16 cycles on the cloud facility's Intel core i7s
+The compiler might be smart enough to avoid the impredictable branch, but maybe not.
+
+No-Branch minimum
+Prob: Find the minimum of 2 integers x and y without a branch
+r = y ^((x^y) & - (x<y));
+Why it works:
+* C represents the boolean true and false with the integers 1 and 0 respectively.
+* If x < y, then -(x < y) = -1, which is all 1's in two's complement representation.
+* If x >= y, then -(x < y) = 0. Therefore we have y ^ 0 = y.
+
+These operations generally run on the processing unit and take only one cycle, so this is faster.
