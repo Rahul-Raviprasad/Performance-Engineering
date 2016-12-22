@@ -179,3 +179,12 @@ Why it works:
 * If x >= y, then -(x < y) = 0. Therefore we have y ^ 0 = y.
 
 These operations generally run on the processing unit and take only one cycle, so this is faster.
+
+### Modular Addition
+Prob: compute(x+y)mod n, assuming that 0 <= x < n and  0 <= y < n
+r = (x+y)%n; // divide is expensive unless by a power of 2
+z = x+y;
+r = (z<n)?z:z-n // unpredictable branch is expensive
+
+z= x+y
+r= z-(n&-(z>=n)); //same trick as minimum
