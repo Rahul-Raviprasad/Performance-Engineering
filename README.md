@@ -188,3 +188,17 @@ r = (z<n)?z:z-n // unpredictable branch is expensive
 
 z= x+y
 r= z-(n&-(z>=n)); //same trick as minimum
+
+### Round up to a power of 2
+Problem: compute 2^[logn]
+//64bit integer
+
+ - - n;
+ n |= n >> 1;
+ n |= n >> 2;
+ n |= n >> 4;
+ n |= n >> 8;
+ n |= n >> 16;
+ n |= n >> 32;
+ ++n;
+ 
