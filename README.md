@@ -192,8 +192,8 @@ r= z-(n&-(z>=n)); //same trick as minimum
 ### Round up to a power of 2
 Problem: compute 2^[logn]
 //64bit integer
-
- - - n;
+```
+ -- n;
  n |= n >> 1;
  n |= n >> 2;
  n |= n >> 4;
@@ -201,4 +201,8 @@ Problem: compute 2^[logn]
  n |= n >> 16;
  n |= n >> 32;
  ++n;
- 
+```
+
+## Resources
+1. Not all CPU operations are created equal - source ithare.com
+http://ithare.com/wp-content/uploads/part101_infographics_v07.png
